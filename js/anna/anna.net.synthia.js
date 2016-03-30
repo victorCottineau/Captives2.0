@@ -70,8 +70,10 @@ var synthia_yes = [
 var nSynthiaYes = new nRule(synthia_yes);
 nSynthiaYes.operator = function () {
 	var cat = this.inputs[1].cval;
-	if (cat.find("[YES]"))
+	if (cat.find("[YES]")) {
 		this.cval = this.randomTemplate();
+        $("#wrapper").css("background-image","linear-gradient(#08EF00, #97ED94)");
+    }
 	else this.cval = "";
 	}
 
@@ -90,8 +92,10 @@ var synthia_no = [
 var nSynthiaNo = new nRule(synthia_no);
 nSynthiaNo.operator = function () {
 	var cat = this.inputs[1].cval;
-	if (cat.find("[NO]"))
+	if (cat.find("[NO]")) {
 		this.cval = this.randomTemplate();
+         $("#wrapper").css("background-image","linear-gradient(#DB0B0B, #F07070)");
+    }
 	else this.cval = "";
 	}
 

@@ -58,20 +58,20 @@ var tag = 0;
 
 function sendMessage () {
 	//On déclenche la phase de bug après un certain nombre de messages envoyés.
-	if (messages_sent > 4)
+	/*if (messages_sent > 4)
 	{
 		if (buggued == 1) {
 			localStorage.setItem(1337, 0);
 			document.location.href="credits.html";
 		}
 		else
-			document.location.href="bug.html";
+		document.location.href="bug.html";
 	}
 	else
-	{
+	{*/
 		tag = nnLifeCount;
 		think();
-	}
+//	}
 	return false;
 }
 
@@ -82,6 +82,11 @@ function think () {
 	var x = $("#message").val();
 	$("#message").val("");
 	x = x.trim();
+    //un mot clef déclenche le bug
+    if (x == "banane")
+    {
+        document.location.href="bug.html";
+    }
 	if (x != "") {
 		setTimeout(function(){
 			if (buggued == 1)
