@@ -1,0 +1,92 @@
+body {
+    width: 1080px; 
+    height: 1920px;
+    margin-top: 0px;
+    margin-bottom: 0px;
+    margin-left: auto;
+    margin-right: auto;
+    color: white;
+    font-family: Calibri,'HelveticaNeue-Light', 'HelveticaNeue', Helvetica, Arial, sans-serif;
+}
+
+h1 {
+    font-weight: lighter;
+    margin: 0px;
+    padding-top: 1%;
+    font-size:  6vmin;
+    text-align: center;
+}
+
+#wrapper {
+    width: 100%; 
+    height: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    background-image: linear-gradient(#10597e, #5baab1);
+	background-color: #5baab1;
+}
+
+#logoHolder {
+}
+
+#logo {
+    height: 12vh;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    padding-bottom: 2%;
+}
+
+#chat {
+    font-size: 3vmin;
+    
+}
+
+.bubble
+{
+	display: none;
+	margin: 0px;
+    margin-top: 2%;
+    margin-bottom: 2%;
+	padding: 5%;
+	vertical-align: top;
+	line-height: 150%;
+	width: 80%;
+	border-top: 1px solid;
+	border-bottom: 1px solid;
+	border-color: rgba(0, 0, 0, 0.15);
+    -moz-box-shadow: 2px 2px 15px #333;
+	-webkit-box-shadow: 2px 2px 15px #333;
+	box-shadow: 2px 2px 15px #333;
+}
+
+.bubble.blue
+{
+    margin-left: 1%;
+	background-color: rgba(20, 69, 125, 0.25);
+	color: white;
+}
+
+.bubble.white
+{
+	background-color: rgba(255, 255, 255, 0.25);
+	color: white;
+	text-align: right;
+    margin-left: 9%;
+}
+
+#writer{
+	outline: none;
+}
+
+#writer input{
+    width: 100%;
+	box-sizing: border-box;
+	height: 12vmin;
+	padding: 5px 8px;
+    border:1px solid #aaa;
+	font-size: 3.5vmin;
+    box-shadow: 0px 0px 3px #ccc, 0 10px 15px #eee inset;
+    border-radius:4px;
+	outline: none;
+}
