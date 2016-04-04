@@ -4,10 +4,50 @@
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
         <link rel="stylesheet" type="text/css" href="css/bug.css">
         <title>Captives</title>
+        <script>
+            var myCanvasContext,cptFrame;
+            
+            function start () {
+                var canvas=document.getElementById("myCanvas");
+                myCanvasContext=canvas.getContext("2d");
+                cptFrame=0;
+                drawFrame();
+            }
+            function drawFrame() {
+                
+        
+              /*  myCanvasContext.fillStyle="black";
+                myCanvasContext.fillRect(0,0,1080,1920);*/
+                
+                for (var i = 0;i < 5; i++){
+                    myCanvasContext.fillStyle="#25C61F";
+                    myCanvasContext.fillRect(Math.floor((Math.random() * 800) + 1), Math.floor((Math.random() * 1920) + 1), Math.floor((Math.random() * 400) + 200), 50);
+                    myCanvasContext.fill();
+                }
+                
+                 for (var i = 0;i < 5; i++){
+                    myCanvasContext.fillStyle="#277125";
+                    myCanvasContext.fillRect(Math.floor((Math.random() * 800) + 1), Math.floor((Math.random() * 1920) + 1), Math.floor((Math.random() * 400) + 200), 50);
+                    myCanvasContext.fill();
+                }
+                
+                for (var i = 0;i < 5; i++){
+                    myCanvasContext.fillStyle="#214C20";
+                    myCanvasContext.fillRect(Math.floor((Math.random() * 800) + 1), Math.floor((Math.random() * 1920) + 1), Math.floor((Math.random() * 400) + 200), 50);
+                    myCanvasContext.fill();
+                }
+                
+                //on relance la boucle
+                cptFrame++;
+                setTimeout(drawFrame,1000/50);
+            }
+        </script>
     </head>
-    <body>
+    <body onload="start();">
         <div id="wrapper">
-            <h1>bug</h1>
+            <canvas id="myCanvas" width="1080px" height="1920px">
+                Your browser does not support the HTML5 canvas tag.
+            </canvas>
         </div>
     </body>
 </html>

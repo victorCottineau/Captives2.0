@@ -85,7 +85,8 @@ function think () {
     //un mot clef déclenche le bug
     if (x == "banane")
     {
-        document.location.href="bug.html";
+        start();
+        //document.location.href="bug.html";
     }
 	if (x != "") {
 		setTimeout(function(){
