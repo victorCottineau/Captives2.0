@@ -3,6 +3,10 @@
 // (c) Jean-Claude Heudin 2015
 
 // ===============================================================================
+// SYNTHIA PERSONALITY emotion
+// ===============================================================================
+    var emotion = 50;
+// ===============================================================================
 // SYNTHIA PERSONALITY INPUTS
 // ===============================================================================
 
@@ -34,8 +38,10 @@ var synthia_hello = [
 var nSynthiaHello = new nRule(synthia_hello);
 nSynthiaHello.operator = function () {
 	var cat = this.inputs[1].cval;
-	if (cat.find("[HELLO]") || (cat.find("[POSITIVE]") && cat.find("[TIME]")))
+	if (cat.find("[HELLO]") || (cat.find("[POSITIVE]") && cat.find("[TIME]"))) {
 		this.cval = this.randomTemplate();
+        emotion+= 5;
+    }
 	else this.cval = "";
 	}
 
@@ -71,8 +77,8 @@ var nSynthiaYes = new nRule(synthia_yes);
 nSynthiaYes.operator = function () {
 	var cat = this.inputs[1].cval;
 	if (cat.find("[YES]")) {
-		this.cval = this.randomTemplate();
-        $("#wrapper").css("background-image","linear-gradient(#08EF00, #97ED94)");
+		this.cval = this.randomTemplate();  
+        emotion+= 5;
     }
 	else this.cval = "";
 	}
@@ -94,7 +100,7 @@ nSynthiaNo.operator = function () {
 	var cat = this.inputs[1].cval;
 	if (cat.find("[NO]")) {
 		this.cval = this.randomTemplate();
-         $("#wrapper").css("background-image","linear-gradient(#DB0B0B, #F07070)");
+        emotion-=5;
     }
 	else this.cval = "";
 	}
@@ -111,8 +117,10 @@ var synthia_sorry = [
 var nSynthiaSorry = new nRule(synthia_sorry);
 nSynthiaSorry.operator = function () {
 	var cat = this.inputs[1].cval;
-	if (cat.find("[SORRY]"))
+	if (cat.find("[SORRY]")) {
 		this.cval = this.randomTemplate();
+        emotion+= 5;
+    }
 	else this.cval = "";
 	}
 
@@ -150,8 +158,10 @@ var synthia_insultes = [
 var nSynthiaInsultes = new nRule(synthia_insultes);
 nSynthiaInsultes.operator = function () {
 	var cat = this.inputs[1].cval;
-	if (cat.find("[INSULT]"))
+	if (cat.find("[INSULT]")) {
 		this.cval = this.randomTemplate();
+        emotion-=5;
+    }
 	else this.cval = "";
 	}
 

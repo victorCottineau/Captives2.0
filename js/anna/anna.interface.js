@@ -142,5 +142,22 @@ function dialogue(fromHuman, dialoguetext) {
 					$("#box" + i).text($("#box" + (i+1)).text());
 			}
 		}
+        if (!fromHuman){
+            emot();
+            console.log(emotion)
+            
+        }
 	}
+}
+
+function emot () {
+    if (emotion<=65 && emotion>=35) {
+        $("#wrapper").css("background-image","linear-gradient(#10597e, #5baab1)");
+    }
+    if (emotion>65){
+        $("#wrapper").css("background-image","linear-gradient(#08EF00, #97ED94)");
+    }
+    if (emotion<35) {
+        $("#wrapper").css("background-image","linear-gradient(#DB0B0B, #F07070)");
+    }
 }

@@ -27,14 +27,20 @@ var myCanvasContext,cptFrame;
                 if (cptFrame == 250) {
                     var c = document.getElementById("myCanvas");
                     var ctx = c.getContext("2d");
+                    document.getElementById("myCanvas").style.pointerEvents = "auto";
                    // myCanvasContext.fillStyle="black";
                   //  myCanvasContext.fillRect(0,0,1080,1920);
                     var img = document.getElementById("phoneCall");
                     ctx.drawImage(img, 0, 0, 1080, 1920);
+                   // myCanvas.addEventListener('click', function() {location.href='chatOmbre.html';}, false);
+                    c.addEventListener("mousedown", getPosition, false);
                 }
                 else {
                 //on relance la boucle
                 cptFrame++;
                 setTimeout(drawFrame,1000/50);
                 }
+            }
+            function getPosition(event) {
+                location.href='chatOmbre.html';
             }
