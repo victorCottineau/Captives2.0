@@ -11,6 +11,7 @@ var nnLifeCount = 0;
 var messages_sent = 0;
 var buggued = 0;
 var currentBox = 2;
+var image = false;
 
 window.onload = function() {
 	nnStart();
@@ -29,6 +30,7 @@ function nnStart () {
 		$("#box1").text("AIDE-MOI, JE T'EN SUPPLIE !");
 	}
 	nnTimer = setInterval(nnLifePulse, 1000)
+	console.log(buggued);
 }
 function nnStop () { clearInterval(nnTimer); }
 
@@ -58,20 +60,19 @@ var tag = 0;
 
 function sendMessage () {
 	//On déclenche la phase de bug après un certain nombre de messages envoyés.
-	/*if (messages_sent > 4)
+	if (messages_sent > 4)
 	{
 		if (buggued == 1) {
 			localStorage.setItem(1337, 0);
-			document.location.href="credits.html";
+			image = true;
+			document.location.href="chat.html";
 		}
-		else
-		document.location.href="bug.html";
 	}
 	else
-	{*/
+	{
 		tag = nnLifeCount;
 		think();
-//	}
+	}
 	return false;
 }
 
@@ -82,10 +83,15 @@ function think () {
 	var x = $("#message").val();
 	$("#message").val("");
 	x = x.trim();
+	//un mot cleft déclenche la fin du proto
+	if (x == "coucou" && image == true)
+	{
+		document.location.href="credit.html";
+	}
     //un mot clef déclenche le bug
     if (x == "banane")
     {
-        start();
+        chatStart();
         //document.location.href="bug.html";
     }
 	if (x != "") {
@@ -142,7 +148,7 @@ function dialogue(fromHuman, dialoguetext) {
 					$("#box" + i).text($("#box" + (i+1)).text());
 			}
 		}
-        if (!fromHuman){
+        if (!fromHuman && buggued == 0){
             emot();
             console.log(emotion)
             
@@ -150,6 +156,7 @@ function dialogue(fromHuman, dialoguetext) {
 	}
 }
 
+//Emotions de l'IA
 function emot () {
     if (emotion<=65 && emotion>=35) {
         $("#wrapper").css("background-image","linear-gradient(#10597e, #5baab1)");

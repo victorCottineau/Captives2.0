@@ -1,6 +1,6 @@
 var myCanvasContext,cptFrame;
             
-            function start () {
+            function chatStart () {
                 var canvas=document.getElementById("myCanvas");
                 myCanvasContext=canvas.getContext("2d");
                 cptFrame=0;
@@ -33,6 +33,8 @@ var myCanvasContext,cptFrame;
                     var img = document.getElementById("phoneCall");
                     ctx.drawImage(img, 0, 0, 1080, 1920);
                     c.addEventListener("click", click, false);
+                    localStorage.setItem(1337, 1);
+                    console.log(buggued);
                 }
                 else {
                 //on relance la boucle
