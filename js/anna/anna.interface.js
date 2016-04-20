@@ -11,7 +11,7 @@ var nnLifeCount = 0;
 var messages_sent = 0;
 var buggued = 0;
 var currentBox = 2;
-var image = false;
+var image = 0;
 
 window.onload = function() {
 	nnStart();
@@ -24,13 +24,14 @@ function nnStart () {
 	//Le curseur prend la barre d'input en focus pour taper directement
 	$("#message").focus();
 	buggued = localStorage.getItem(1337);
+	image = localStorage.getItem(1338);
 	$("#box1").addClass("blue");
 	currentBox = 2;
 	if (buggued == 1) {
 		$("#box1").text("AIDE-MOI, JE T'EN SUPPLIE !");
 	}
 	nnTimer = setInterval(nnLifePulse, 1000)
-	console.log(buggued);
+	//console.log(buggued);
 }
 function nnStop () { clearInterval(nnTimer); }
 
@@ -59,14 +60,15 @@ var speech = "";
 var tag = 0;
 
 function sendMessage () {
-	//On déclenche la phase de bug après un certain nombre de messages envoyés.
-	if (messages_sent > 4)
-	{
-		if (buggued == 1) {
-			localStorage.setItem(1337, 0);
-			image = true;
-			document.location.href="chat.html";
-		}
+	//On déclenche la fin de la phase ombre après un certain nombre de messages envoyés.
+	//console.log(messages_sent);
+	if (buggued == 1 && messages_sent == 2) {
+		pandaImage();
+		localStorage.setItem(1337, 0);
+		localStorage.setItem(1338, 1);
+	}
+	else if (messages_sent == 4) {
+		chatStart();
 	}
 	else
 	{
@@ -83,18 +85,22 @@ function think () {
 	var x = $("#message").val();
 	$("#message").val("");
 	x = x.trim();
+	//console.log(image);
+	//console.log(localStorage.getItem(1338));
 	//un mot cleft déclenche la fin du proto
-	if (x == "coucou" && image == true)
+	if (x == "panda" && image == 1)
 	{
+		//console.log("yeah")
 		document.location.href="credit.html";
+		localStorage.setItem(1338, 0);
 	}
     //un mot clef déclenche le bug
-    if (x == "banane")
+    /*else if (x == "banane")
     {
         chatStart();
         //document.location.href="bug.html";
-    }
-	if (x != "") {
+    }*/
+	else if (x != "") {
 		setTimeout(function(){
 			if (buggued == 1)
 			{
@@ -150,7 +156,7 @@ function dialogue(fromHuman, dialoguetext) {
 		}
         if (!fromHuman && buggued == 0){
             emot();
-            console.log(emotion)
+            //console.log(emotion)
             
         }
 	}

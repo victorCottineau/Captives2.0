@@ -4,4 +4,5 @@ window.onload = function() {
 
 function indexStart () {
 	localStorage.setItem(1337, 0);
+	localStorage.setItem(1338, 0);
 }

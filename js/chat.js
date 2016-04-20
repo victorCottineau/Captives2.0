@@ -34,7 +34,7 @@ var myCanvasContext,cptFrame;
                     ctx.drawImage(img, 0, 0, 1080, 1920);
                     c.addEventListener("click", click, false);
                     localStorage.setItem(1337, 1);
-                    console.log(buggued);
+                    //console.log(buggued);
                 }
                 else {
                 //on relance la boucle
