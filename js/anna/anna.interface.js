@@ -67,7 +67,7 @@ function sendMessage () {
 		localStorage.setItem(1337, 0);
 		localStorage.setItem(1338, 1);
 	}
-	else if (messages_sent == 4) {
+	else if (messages_sent == 4 && image == 0) {
 		chatStart();
 	}
 	else
