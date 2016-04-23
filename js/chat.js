@@ -1,6 +1,6 @@
 var myCanvasContext,cptFrame;
             
-            function start () {
+            function chatStart () {
                 var canvas=document.getElementById("myCanvas");
                 myCanvasContext=canvas.getContext("2d");
                 cptFrame=0;
@@ -32,8 +32,9 @@ var myCanvasContext,cptFrame;
                   //  myCanvasContext.fillRect(0,0,1080,1920);
                     var img = document.getElementById("phoneCall");
                     ctx.drawImage(img, 0, 0, 1080, 1920);
-                   // myCanvas.addEventListener('click', function() {location.href='chatOmbre.html';}, false);
-                    c.addEventListener("mousedown", getPosition, false);
+                    c.addEventListener("click", click, false);
+                    localStorage.setItem(1337, 1);
+                    //console.log(buggued);
                 }
                 else {
                 //on relance la boucle
@@ -41,6 +42,6 @@ var myCanvasContext,cptFrame;
                 setTimeout(drawFrame,1000/50);
                 }
             }
-            function getPosition(event) {
+            function click(event) {
                 location.href='chatOmbre.html';
             }
