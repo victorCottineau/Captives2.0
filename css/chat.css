@@ -50,19 +50,14 @@ h1 {
 .bubble
 {
 	display: none;
-	margin: 0px;
+	margin: 0;
     margin-top: 2%;
     margin-bottom: 2%;
 	padding: 5%;
 	vertical-align: top;
 	line-height: 150%;
-	width: 80%;
-	border-top: 1px solid;
-	border-bottom: 1px solid;
-	border-color: rgba(0, 0, 0, 0.15);
-    -moz-box-shadow: 2px 2px 15px #333;
-	-webkit-box-shadow: 2px 2px 15px #333;
-	box-shadow: 2px 2px 15px #333;
+	width: 50%;
+    border-radius: 35px;
 }
 
 .bubble.blue
@@ -70,14 +65,27 @@ h1 {
     margin-left: 1%;
 	background-color: rgba(20, 69, 125, 0.25);
 	color: white;
+
 }
 
+.bubble.blue::after {
+    content: '';
+    height: 0;
+    border-style: solid;
+    border-width: 7px 0px 19px 23px;
+    border-color: transparent transparent transparent rgba(20, 69, 125, 0.25);
+    position: absolute;
+    left: 127px;
+    margin-top: 72px;
+    transform: rotateZ(25deg);
+
+}
 .bubble.white
 {
 	background-color: rgba(255, 255, 255, 0.25);
 	color: white;
 	text-align: right;
-    margin-left: 9%;
+    margin-left: 39%;
 }
 
 #writer{
