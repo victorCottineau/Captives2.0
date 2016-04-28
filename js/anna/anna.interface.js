@@ -24,11 +24,14 @@ function nnStart () {
 	//Le curseur prend la barre d'input en focus pour taper directement
 	$("#message").focus();
 	buggued = localStorage.getItem(1337);
-	image = localStorage.getItem(1338);
+	image = localStorage.getItem(1336);
 	$("#box1").addClass("blue");
 	currentBox = 2;
 	if (buggued == 1) {
 		$("#box1").text("AIDE-MOI, JE T'EN SUPPLIE !");
+	}
+	if (image == 1) {
+		$("#box1").text("Qu'est ce qu'il vient de se passer ?");
 	}
 	nnTimer = setInterval(nnLifePulse, 1000)
 	//console.log(buggued);
@@ -62,10 +65,13 @@ var tag = 0;
 function sendMessage () {
 	//On déclenche la fin de la phase ombre après un certain nombre de messages envoyés.
 	//console.log(messages_sent);
+	console.log(image);
+	console.log(buggued);
+	console.log(messages_sent);
 	if (buggued == 1 && messages_sent == 2) {
 		pandaImage();
 		localStorage.setItem(1337, 0);
-		localStorage.setItem(1338, 1);
+		localStorage.setItem(1336, 1);
 	}
 	else if (messages_sent == 4 && image == 0) {
 		chatStart();
@@ -92,7 +98,7 @@ function think () {
 	{
 		//console.log("yeah")
 		document.location.href="credit.html";
-		localStorage.setItem(1338, 0);
+		localStorage.setItem(1336, 0);
 	}
     //un mot clef déclenche le bug
     /*else if (x == "banane")
@@ -102,9 +108,14 @@ function think () {
     }*/
 	else if (x != "") {
 		setTimeout(function(){
-			if (buggued == 1)
+			if (buggued == 1 && messages_sent == 0)
 			{
-				dialogue(false, "AIDE-MOI !!");
+				dialogue(false, "J'ai besoin d'aide !!");
+				messages_sent++;
+			}
+			else if (buggued ==1 && messages_sent == 1) 
+			{
+				dialogue(false, "Aide moi à décrypter cette image");
 				messages_sent++;
 			}
 			else
