@@ -14,6 +14,7 @@ h1 {
     padding-top: 1%;
     font-size:  6vmin;
     text-align: center;
+    z-index: 1;
 }
 
 #wrapper {
@@ -21,13 +22,19 @@ h1 {
     height: 100%;
     margin-left: auto;
     margin-right: auto;
-    background-image: linear-gradient(#10597e, #5baab1);
-	background-color: #5baab1;
+    //background-image: linear-gradient(#10597e, #5baab1);
+	//background-color: #5baab1;
+    z-index: 1;
 }
 
 #myCanvas {
     position: absolute;
     z-index: 1;
+}
+
+#backgroundCanvas {
+    position: absolute;
+    z-index: -1;
 }
 
 #logoHolder {

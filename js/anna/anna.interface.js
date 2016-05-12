@@ -25,6 +25,7 @@ function nnStart () {
 	$("#message").focus();
 	buggued = localStorage.getItem(1337);
 	image = localStorage.getItem(1336);
+    Background = localStorage.getItem(1335);
 	$("#box1").addClass("blue");
 	currentBox = 2;
 	if (buggued == 1) {
@@ -65,9 +66,10 @@ var tag = 0;
 function sendMessage () {
 	//On déclenche la fin de la phase ombre après un certain nombre de messages envoyés.
 	//console.log(messages_sent);
-	console.log(image);
-	console.log(buggued);
-	console.log(messages_sent);
+	//console.log(image);
+	//console.log(buggued);
+	//console.log(messages_sent);
+    console.log(Background);
 	if (buggued == 1 && messages_sent == 2) {
 		pandaImage();
 		localStorage.setItem(1337, 0);
@@ -167,7 +169,8 @@ function dialogue(fromHuman, dialoguetext) {
 		}
         if (!fromHuman && buggued == 0){
             emot();
-            //console.log(emotion)
+            backgroundStart();
+            console.log(emotion);
             
         }
 	}
@@ -175,13 +178,26 @@ function dialogue(fromHuman, dialoguetext) {
 
 //Emotions de l'IA
 function emot () {
-    if (emotion<=65 && emotion>=35) {
-        $("#wrapper").css("background-image","linear-gradient(#10597e, #5baab1)");
+    //neutral
+    if (localStorage.getItem(1335) != 0 && emotion<=65 && emotion>=35) {
+        //$("#wrapper").css("background-image","linear-gradient(#10597e, #5baab1)");
+        var vid = document.getElementById("video1");
+        vid.src = "video/neutral.mp4";
+        localStorage.setItem(1335, 0);
     }
-    if (emotion>65){
-        $("#wrapper").css("background-image","linear-gradient(#08EF00, #97ED94)");
+    //joy
+    if (localStorage.getItem(1335) != 1 && emotion>65){
+        //$("#wrapper").css("background-image","linear-gradient(#08EF00, #97ED94)");
+        
+        var vid = document.getElementById("video1");
+        vid.src = "video/joy.mp4";
+        localStorage.setItem(1335, 1);
     }
-    if (emotion<35) {
-        $("#wrapper").css("background-image","linear-gradient(#DB0B0B, #F07070)");
+    //wraith
+    if (localStorage.getItem(1335) != 2 && emotion<35) {
+        //$("#wrapper").css("background-image","linear-gradient(#DB0B0B, #F07070)");
+        var vid = document.getElementById("video1");
+        vid.src = "video/wraith.mp4";
+        localStorage.setItem(1335, 2);
     }
 }
