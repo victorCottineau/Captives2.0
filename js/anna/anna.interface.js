@@ -181,6 +181,9 @@ function emot () {
     //neutral
     if (localStorage.getItem(1335) != 0 && emotion<=65 && emotion>=35) {
         //$("#wrapper").css("background-image","linear-gradient(#10597e, #5baab1)");
+		//$("#wrapper").css("background-color","#ffffff");
+		//var white = document.getElementsByClassName('white');
+		//white.style.backgroundColor = '#ff00aa';
         var vid = document.getElementById("video1");
         vid.src = "video/neutral.mp4";
         localStorage.setItem(1335, 0);
@@ -188,15 +191,18 @@ function emot () {
     //joy
     if (localStorage.getItem(1335) != 1 && emotion>65){
         //$("#wrapper").css("background-image","linear-gradient(#08EF00, #97ED94)");
-        
+		//var white = document.getElementsByClassName('white');
+		//white.style.backgroundColor = '#ff00aa';
         var vid = document.getElementById("video1");
         vid.src = "video/joy.mp4";
         localStorage.setItem(1335, 1);
     }
-    //wraith
+    //wrath
     if (localStorage.getItem(1335) != 2 && emotion<35) {
         //$("#wrapper").css("background-image","linear-gradient(#DB0B0B, #F07070)");
-        var vid = document.getElementById("video1");
+		//var white = document.getElementsByClassName('white');
+		//white.style.backgroundColor = '#ff00aa';
+        //var vid = document.getElementById("video1");
         vid.src = "video/wraith.mp4";
         localStorage.setItem(1335, 2);
     }
