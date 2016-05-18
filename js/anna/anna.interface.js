@@ -202,7 +202,7 @@ function emot () {
         //$("#wrapper").css("background-image","linear-gradient(#DB0B0B, #F07070)");
 		//var white = document.getElementsByClassName('white');
 		//white.style.backgroundColor = '#ff00aa';
-        //var vid = document.getElementById("video1");
+        var vid = document.getElementById("video1");
         vid.src = "video/wraith.mp4";
         localStorage.setItem(1335, 2);
     }
