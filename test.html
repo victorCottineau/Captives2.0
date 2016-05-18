@@ -6,10 +6,15 @@
 		<script type="text/javascript" src="js/test.js"></script>
 		<script type="text/javascript" src="js/jquery.js"></script>
 		</script>
+		<script type="text/javascript" src="js/background.js"></script>
         <title>Captives</title>
     </head>
-    <body>
+    <body onload="backgroundOnload();">
     <div id="wrapper">
+     <canvas id="backgroundCanvas" width="1080px" height="1920px"></canvas>
+         <video id="video1" width="0" height="0" autoplay loop>
+                <source src="video/neutral.mp4" type='video/mp4'>
+            </video>
    		 <h1>oli</h1>
         <div id="intro">Bonjour, avant de commencer j'aurais besoin d'informations sur vous</div>
         <div id="start" onClick="start();">D'accord <hr/> </div>

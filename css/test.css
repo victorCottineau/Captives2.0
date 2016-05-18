@@ -35,8 +35,13 @@ hr {
     height: 100%;
     margin-left: auto;
     margin-right: auto;
-    background-image: linear-gradient(#10597e, #5baab1);
-	background-color: #5baab1;
+    //background-image: linear-gradient(#10597e, #5baab1);
+	//background-color: #5baab1;
+}
+
+#backgroundCanvas {
+    position: absolute;
+    z-index: -1;
 }
 
 #questionNumber {
@@ -55,7 +60,8 @@ hr {
 	vertical-align: top;
 	line-height: 150%;
 	width: 60%;
-	background-color: rgba(20, 69, 125, 0.25);
+	//background-color: rgba(20, 69, 125, 0.25);
+	background-color: rgba(223, 140, 88, 0.4);
 }
 
 #question:first-letter {
@@ -87,7 +93,8 @@ hr {
 	vertical-align: top;
 	line-height: 150%;
 	width: 70%;
-	background-color: rgba(20, 69, 125, 0.25);
+	//background-color: rgba(20, 69, 125, 0.25);
+	background-color: rgba(223, 140, 88, 0.4);
 	
 
 }
@@ -97,7 +104,8 @@ hr {
     text-align: center;
 	font-weight: lighter;
     font-size: 3vmin;
-    background-color: rgba(255, 255, 255, 0.25);
+    //background-color: rgba(255, 255, 255, 0.25);
+    background-color: rgba(121, 46, 0, 0.4);
     border-radius: 35px;
     width: 50%;
 	padding: 5%;
@@ -111,7 +119,8 @@ hr {
     padding-bottom: 40%;
     position: relative;
     width: 40%;
-	background-color: rgba(255, 255, 255, 0.25);
+	//background-color: rgba(255, 255, 255, 0.25);
+	background-color: rgba(121, 46, 0, 0.4);
 	border-radius: 35px;
     display: none;
 }

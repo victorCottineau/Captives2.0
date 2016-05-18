@@ -11,9 +11,9 @@ body {
 h1 {
     font-weight: lighter;
     margin: 0px;
-    padding-top: 10%;
+    padding-top: 5%;
     padding-bottom: 5%;
-    font-size:  14vmin;
+    font-size:  20vmin;
     text-align: center;
 }
 
@@ -22,8 +22,13 @@ h1 {
     height: 100%;
     margin-left: auto;
     margin-right: auto;
-    background-image: linear-gradient(#10597e, #5baab1);
-	background-color: #5baab1;
+    //background-image: linear-gradient(#10597e, #5baab1);
+	//background-color: #5baab1;
+}
+
+#backgroundCanvas {
+    position: absolute;
+    z-index: -1;
 }
 
 #logoHolder {
@@ -36,15 +41,34 @@ h1 {
 }
 
 #intro {
+    margin-top: 40%;
+    padding-top: 5%;
+    padding-bottom: 5%;
+    margin-left: auto;
+    margin-right: auto;
     text-align: center;
     font-weight: lighter;
     font-size: 4vmin;
+    background-color: rgba(223, 140, 88, 0.4);
+    width: 85%;
+    border-radius: 35px;
 }
 
 #startButton {
+    margin-top: 3%;
+    margin-bottom:3%;
+    margin-right: auto;
+    margin-left: auto;
     text-align: center;
     font-weight: lighter;
     font-size: 4vmin;
     text-decoration: underline;
+    background-color: rgba(121, 46, 0, 0.4);
+    width: 50%;
+    border-radius: 35px;
+}
+
+#buttonHolder {
+    
 }
 

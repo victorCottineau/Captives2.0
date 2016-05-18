@@ -4,18 +4,23 @@
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
         <link rel="stylesheet" type="text/css" href="css/index.css">
         <script type="text/javascript" src="js/index.js"></script>
+        <script type="text/javascript" src="js/background.js"></script>
         <title>Captives</title>
     </head>
-    <body>
+    <body onload="backgroundOnload();">
         <div id="wrapper">
+        <canvas id="backgroundCanvas" width="1080px" height="1920px"></canvas>
+         <video id="video1" width="0" height="0" autoplay loop>
+                <source src="video/neutral.mp4" type='video/mp4'>
+            </video>
             <h1>oli</h1>
-            <div id="logoHolder">
+          <!--  <div id="logoHolder">
                 <img id="logo" src="img/digipal.png"/>
-            </div>
+            </div>-->
             <div>
                 <p id="intro">Vous n'êtes plus qu'à quelques secondes du futur ...</p>
             </div>
-            <div onClick="document.location.href='test.html';">
+            <div id="buttonHolder" onClick="document.location.href='test.html';">
                 <h2 id="startButton">Commencer</h2>
             </div>
         </div>
