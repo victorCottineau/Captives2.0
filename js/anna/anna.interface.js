@@ -130,6 +130,7 @@ function think () {
 				// write answer
 				var answer = nOutput.cval;
 				dialogue(false, answer);
+				console.log(answer);
 				messages_sent++;
 				// text to speech
 				//responsiveVoice.speak(answer, "French Male");
@@ -140,7 +141,7 @@ function think () {
 
 function dialogue(fromHuman, dialoguetext) {
 	if (dialoguetext.trim() != "") {
-		if (currentBox < 5) {
+		if (currentBox < 3) {
 			if (fromHuman) {
 				$("#box" + currentBox).addClass("white");
 			}
@@ -152,17 +153,19 @@ function dialogue(fromHuman, dialoguetext) {
 			currentBox++;
 		}
 		else {
-			for (var i = 1; i < 5; i++) {
+			
+			for (var i = 1; i < 3; i++) {
 				$("#box" + i).removeClass("white");
 				$("#box" + i).removeClass("blue");
-				if (((i < 4) && $("#box" + (i + 1)).hasClass("white")) || ((i == 4) && fromHuman)) {
+				if (((i < 2) && $("#box" + (i + 1)).hasClass("white")) || ((i == 2) && fromHuman)) {
 					$("#box" + i).addClass("white");
 				}
 				else {
 					$("#box" + i).addClass("blue");
 				}
-				if (i == 4)
-					$("#box4").text(dialoguetext);
+				if (i == 2) {
+					$("#box2").text(dialoguetext);
+				}
 				else
 					$("#box" + i).text($("#box" + (i+1)).text());
 			}
