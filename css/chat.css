@@ -37,6 +37,12 @@ h1 {
     z-index: -1;
 }
 
+#video1 {
+    position: fixed;
+     left:-370px;
+    z-index: -1;
+}
+
 #logoHolder {
 }
 

@@ -172,7 +172,7 @@ function dialogue(fromHuman, dialoguetext) {
 		}
         if (!fromHuman && buggued == 0){
             emot();
-            backgroundStart();
+           // backgroundStart();
             console.log(emotion);
             
         }

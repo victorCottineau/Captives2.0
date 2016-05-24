@@ -8,18 +8,61 @@
         <script type="text/javascript" src="js/anim.js"></script>
         <title>Captives</title>
     </head>
-    <body onload="backgroundOnload();play();">
+    <script>
+            var myCanvasContext,cptFrame;
+            
+            function start () {
+              //  var setMediaPlaybackRequiresUserGesture =false;
+                var canvas=document.getElementById("backgroundCanvas");
+                myCanvasContext=canvas.getContext("2d");
+                cptFrame=0;
+                drawFrame();
+            }
+            function drawFrame() {
+                
+        
+              /*  myCanvasContext.fillStyle="black";
+                myCanvasContext.fillRect(0,0,1080,1920);*/
+                
+                for (var i = 0;i < 5; i++){
+                    myCanvasContext.fillStyle="#25C61F";
+                    myCanvasContext.fillRect(Math.floor((Math.random() * 800) + 1), Math.floor((Math.random() * 1920) + 1), Math.floor((Math.random() * 400) + 200), 50);
+                    myCanvasContext.fill();
+                }
+                
+                 for (var i = 0;i < 5; i++){
+                    myCanvasContext.fillStyle="#277125";
+                    myCanvasContext.fillRect(Math.floor((Math.random() * 800) + 1), Math.floor((Math.random() * 1920) + 1), Math.floor((Math.random() * 400) + 200), 50);
+                    myCanvasContext.fill();
+                }
+                
+                for (var i = 0;i < 5; i++){
+                    myCanvasContext.fillStyle="#214C20";
+                    myCanvasContext.fillRect(Math.floor((Math.random() * 800) + 1), Math.floor((Math.random() * 1920) + 1), Math.floor((Math.random() * 400) + 200), 50);
+                    myCanvasContext.fill();
+                }
+                
+                //on relance la boucle
+                cptFrame++;
+                setTimeout(drawFrame,1000/50);
+            }
+        </script>
+    <body>
         <div id="wrapper">
-        <canvas id="backgroundCanvas" width="1820px" height="1920px"></canvas>
-         <video id="video1" width="100" height="100" controls loop>
-                <source src="video/neutral.mp4" type='video/mp4'>
-            </video>
+       <!-- <canvas id="backgroundCanvas" width="1820" height="1920"></canvas>
+         <video id="video1" width="100" height="100" autoplay loop>
+                <source src="neutral.mp4">
+        </video>-->
+        <video id="video1" width="1820" height="1920" autoplay loop>
+            <source src="video/neutral.mp4">
+        </video>
+      <!-- <canvas id="backgroundCanvas" width="1820" height="1920"></canvas>-->
             <h1>oli</h1>
           <!--  <div id="logoHolder">
                 <img id="logo" src="img/digipal.png"/>
             </div>-->
             <div>
-                <p id="intro">Vous n'êtes plus qu'à quelques secondes du futur ...</p>
+                <p id="intro" onclick="start()">Vous n'êtes plus qu'à quelques secondes du futur ...</p>
             </div>
             <div id="buttonHolder" onClick="document.location.href='test.html';">
                 <h2 id="startButton">Commencer</h2>

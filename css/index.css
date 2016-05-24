@@ -26,8 +26,16 @@ h1 {
 	//background-color: #5baab1;
 }
 
+#video1 {
+    position: fixed;
+     left:-370px;
+    z-index: -1;
+}
+
 #backgroundCanvas {
-    position: absolute;
+    position: fixed;
+    left: 0;
+    top: 0;
     z-index: -1;
 }
 
