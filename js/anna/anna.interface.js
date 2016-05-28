@@ -71,7 +71,7 @@ function sendMessage () {
 	//console.log(messages_sent);
     console.log(Background);
 	if (buggued == 1 && messages_sent == 2) {
-		pandaImage();
+		//pandaImage();
 		localStorage.setItem(1337, 0);
 		localStorage.setItem(1336, 1);
 	}
@@ -182,11 +182,12 @@ function dialogue(fromHuman, dialoguetext) {
 //Emotions de l'IA
 function emot () {
     //neutral
+
     if (localStorage.getItem(1335) != 0 && emotion<=65 && emotion>=35) {
         //$("#wrapper").css("background-image","linear-gradient(#10597e, #5baab1)");
-		//$("#wrapper").css("background-color","#ffffff");
-		//var white = document.getElementsByClassName('white');
-		//white.style.backgroundColor = '#ff00aa';
+		$(".blue").css("background-color","rgba(223, 140, 88, 0.4)");
+		$(".white").css("background-color","rgba(121, 46, 0, 0.4)");
+
         var vid = document.getElementById("video1");
         vid.src = "video/neutral.mp4";
         localStorage.setItem(1335, 0);
@@ -194,19 +195,21 @@ function emot () {
     //joy
     if (localStorage.getItem(1335) != 1 && emotion>65){
         //$("#wrapper").css("background-image","linear-gradient(#08EF00, #97ED94)");
-		//var white = document.getElementsByClassName('white');
-		//white.style.backgroundColor = '#ff00aa';
+		$(".blue").css("background-color","rgba(126, 84, 16, 0.4)");
+		$(".white").css("background-color","rgba(233, 156, 33, 0.4)");
+
         var vid = document.getElementById("video1");
         vid.src = "video/joy.mp4";
         localStorage.setItem(1335, 1);
     }
     //wrath
     if (localStorage.getItem(1335) != 2 && emotion<35) {
-        //$("#wrapper").css("background-image","linear-gradient(#DB0B0B, #F07070)");
-		//var white = document.getElementsByClassName('white');
-		//white.style.backgroundColor = '#ff00aa';
+		$(".blue").css("background-color","rgba(96, 13, 21, 0.4)");
+		$(".white").css("background-color","rgba(183, 89, 97, 0.4)");
+
         var vid = document.getElementById("video1");
         vid.src = "video/wraith.mp4";
         localStorage.setItem(1335, 2);
     }
 }
+console.log(emotion);
