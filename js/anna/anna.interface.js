@@ -71,7 +71,7 @@ function sendMessage () {
 	//console.log(messages_sent);
     console.log(Background);
 	if (buggued == 1 && messages_sent == 2) {
-		//pandaImage();
+		pandaImage();
 		localStorage.setItem(1337, 0);
 		localStorage.setItem(1336, 1);
 	}
@@ -185,8 +185,10 @@ function emot () {
 
     if (localStorage.getItem(1335) != 0 && emotion<=65 && emotion>=35) {
         //$("#wrapper").css("background-image","linear-gradient(#10597e, #5baab1)");
-		$(".blue").css("background-color","rgba(223, 140, 88, 0.4)");
-		$(".white").css("background-color","rgba(121, 46, 0, 0.4)");
+		$(".blue").css("background","url(img/bulles/bulle-neutre-gauche.png) no-repeat center center");
+		$(".blue").css("background-size","100% 100%");
+		$(".white").css("background","url(img/bulles/bulle-neutre-droite.png) no-repeat center center");
+		$(".white").css("background-size","100% 100%");
 
         var vid = document.getElementById("video1");
         vid.src = "video/neutral.mp4";
@@ -195,8 +197,10 @@ function emot () {
     //joy
     if (localStorage.getItem(1335) != 1 && emotion>65){
         //$("#wrapper").css("background-image","linear-gradient(#08EF00, #97ED94)");
-		$(".blue").css("background-color","rgba(126, 84, 16, 0.4)");
-		$(".white").css("background-color","rgba(233, 156, 33, 0.4)");
+		$(".blue").css("background","url(img/bulles/bulle-joie-gauche.png) no-repeat center center");
+		$(".blue").css("background-size","100% 100%");
+		$(".white").css("background","url(img/bulles/bulle-joie-droite.png) no-repeat center center");
+		$(".white").css("background-size","100% 100%");
 
         var vid = document.getElementById("video1");
         vid.src = "video/joy.mp4";
@@ -204,8 +208,10 @@ function emot () {
     }
     //wrath
     if (localStorage.getItem(1335) != 2 && emotion<35) {
-		$(".blue").css("background-color","rgba(96, 13, 21, 0.4)");
-		$(".white").css("background-color","rgba(183, 89, 97, 0.4)");
+		$(".blue").css("background","url(img/bulles/bulle-colere-gauche.png) no-repeat center center");
+		$(".blue").css("background-size","100% 100%");
+		$(".white").css("background","url(img/bulles/bulle-colere-droite.png) no-repeat center center");
+		$(".white").css("background-size","100% 100%");
 
         var vid = document.getElementById("video1");
         vid.src = "video/wraith.mp4";
