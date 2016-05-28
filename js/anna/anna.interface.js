@@ -181,14 +181,19 @@ function dialogue(fromHuman, dialoguetext) {
 
 //Emotions de l'IA
 function emot () {
-    //neutral
 
+
+
+    //neutral
     if (localStorage.getItem(1335) != 0 && emotion<=65 && emotion>=35) {
         //$("#wrapper").css("background-image","linear-gradient(#10597e, #5baab1)");
-		$(".blue").css("background","url(img/bulles/bulle-neutre-gauche.png) no-repeat center center");
-		$(".blue").css("background-size","100% 100%");
-		$(".white").css("background","url(img/bulles/bulle-neutre-droite.png) no-repeat center center");
-		$(".white").css("background-size","100% 100%");
+
+		$("head").append('<style type="text/css"></style>');
+		var newStyleElement = $("head").children(':last');
+		newStyleElement.html('.white{background:url(img/bulles/bulle-neutre-droite.png) no-repeat center center; background-size:100% 100%;}');
+		$("head").append('<style type="text/css"></style>');
+		var newStyleElement = $("head").children(':last');
+		newStyleElement.html('.blue{background:url(img/bulles/bulle-neutre-gauche.png) no-repeat center center; background-size:100% 100%;}');
 
         var vid = document.getElementById("video1");
         vid.src = "video/neutral.mp4";
@@ -197,10 +202,14 @@ function emot () {
     //joy
     if (localStorage.getItem(1335) != 1 && emotion>65){
         //$("#wrapper").css("background-image","linear-gradient(#08EF00, #97ED94)");
-		$(".blue").css("background","url(img/bulles/bulle-joie-gauche.png) no-repeat center center");
-		$(".blue").css("background-size","100% 100%");
-		$(".white").css("background","url(img/bulles/bulle-joie-droite.png) no-repeat center center");
-		$(".white").css("background-size","100% 100%");
+
+
+		$("head").append('<style type="text/css"></style>');
+		var newStyleElement = $("head").children(':last');
+		newStyleElement.html('.white{background:url(img/bulles/bulle-joie-droite.png) no-repeat center center; background-size:100% 100%;}');
+		$("head").append('<style type="text/css"></style>');
+		var newStyleElement = $("head").children(':last');
+		newStyleElement.html('.blue{background:url(img/bulles/bulle-joie-gauche.png) no-repeat center center; background-size:100% 100%;}');
 
         var vid = document.getElementById("video1");
         vid.src = "video/joy.mp4";
@@ -208,10 +217,13 @@ function emot () {
     }
     //wrath
     if (localStorage.getItem(1335) != 2 && emotion<35) {
-		$(".blue").css("background","url(img/bulles/bulle-colere-gauche.png) no-repeat center center");
-		$(".blue").css("background-size","100% 100%");
-		$(".white").css("background","url(img/bulles/bulle-colere-droite.png) no-repeat center center");
-		$(".white").css("background-size","100% 100%");
+
+		$("head").append('<style type="text/css"></style>');
+		var newStyleElement = $("head").children(':last');
+		newStyleElement.html('.white{background:url(img/bulles/bulle-colere-droite.png) no-repeat center center; background-size:100% 100%;}');
+		$("head").append('<style type="text/css"></style>');
+		var newStyleElement = $("head").children(':last');
+		newStyleElement.html('.blue{background:url(img/bulles/bulle-colere-gauche.png) no-repeat center center; background-size:100% 100%;}');
 
         var vid = document.getElementById("video1");
         vid.src = "video/wraith.mp4";
