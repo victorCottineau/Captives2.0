@@ -14,6 +14,7 @@ h1 {
     padding-top: 1%;
     font-size:  6vmin;
     text-align: center;
+    z-index: 1;
 }
 
 #wrapper {
@@ -21,14 +22,24 @@ h1 {
     height: 100%;
     margin-left: auto;
     margin-right: auto;
-    background-image: linear-gradient(#292D46, #3B4A95);
-	background-color: #5baab1;
+    z-index: 1;
 }
 
 #myCanvas {
     position: absolute;
     z-index: 1;
 }
+#backgroundCanvas {
+    position: absolute;
+    z-index: -1;
+}
+#video1 {
+
+    position: fixed;
+    left:-370px;
+    z-index: -1;
+}
+
 
 #logoHolder {
 }
@@ -50,35 +61,27 @@ h1 {
 {
     display: none;
     margin-top: 2%;
-    margin-bottom: 2%;
+    margin-bottom: 4%;
     padding: 5%;
     vertical-align: top;
     line-height: 150%;
     width: 50%;
-    border-radius: 35px;
-    background-color: rgba(223, 140, 88, 0.4);
+    padding-top: 70px;
+    padding-bottom: 70px;
+
 }
 
 .bubble.blue
 {
     margin-left: 1%;
-    background-color: rgba(20, 69, 125, 0.25);
-    color: white;
-
+    color: #000;
+    background-color: rgba(131, 251, 162, 0.4);
 }
 
-.bubble.blue::after {
 
-    
-    position: absolute;
-    left: 127px;
-    margin-top: 72px;
-    transform: rotateZ(25deg);
-
-}
 .bubble.white
 {
-    background-color: rgba(255, 255, 255, 0.25);
+    background-color: rgba(28, 73, 40, 0.4);
     color: white;
     text-align: right;
     margin-left: 39%;
@@ -86,6 +89,7 @@ h1 {
 
 #writer{
 	outline: none;
+
 }
 
 #writer input{

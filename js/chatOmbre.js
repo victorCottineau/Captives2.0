@@ -16,4 +16,12 @@ function pandaImage () {
 }
 function click(event) {
     location.href='chat.html';
-}           
+}
+
+function animation () {
+
+    var vid = document.getElementById("video1");
+    vid.src = "video/ombre.mp4";
+    localStorage.setItem(1335, 0);
+
+}

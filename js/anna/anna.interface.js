@@ -230,4 +230,4 @@ function emot () {
         localStorage.setItem(1335, 2);
     }
 }
-console.log(emotion);
+
