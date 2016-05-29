@@ -1,6 +1,9 @@
 var myCanvasContext,cptFrame;
             
             function chatStart () {
+                var element = document.getElementById("writer");
+                element.parentNode.removeChild(element);
+
                 var canvas=document.getElementById("myCanvas");
                 myCanvasContext=canvas.getContext("2d");
                 cptFrame=0;
@@ -34,7 +37,12 @@ var myCanvasContext,cptFrame;
                     ctx.drawImage(img, 0, 0, 1080, 1920);
                     c.addEventListener("click", click, false);
                     localStorage.setItem(1337, 1);
-                    //console.log(buggued);
+
+                    var audio = new Audio('sound/ringtone.mp3');
+                    audio.volume = 0.5;
+                    audio.loop = true;
+                    audio.play();
+                    console.log(buggued);
                 }
                 else {
                 //on relance la boucle

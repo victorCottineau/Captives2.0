@@ -57,16 +57,15 @@ hr {
 
 #question {
 	display: none;
-	font-weight: normal;
-	font-size: 5vmin;
+	text-align: center;
+    font-weight: lighter;
+    font-size: 4vmin;
     border-radius: 35px;
-	font-size: 3vmin;
+	font-size: 5vmin;
 	margin: 8vh 10% 0 5%;
 	padding: 5%;
 	vertical-align: top;
-	line-height: 150%;
 	width: 60%;
-	//background-color: rgba(20, 69, 125, 0.25);
 	background-color: rgba(223, 140, 88, 0.4);
 }
 
@@ -93,13 +92,14 @@ hr {
     border-width: 7px 0px 19px 23px;
     border-color: transparent transparent transparent rgba(20, 69, 125, 0.25);*/
 	border-radius: 35px;
-	font-size: 3vmin;
-	margin: 8vh 10% 0 5%;
+	text-align: center;
+    font-weight: lighter;
+    font-size: 4vmin;
+	margin: auto;
+	margin-top: 90%;
 	padding: 5%;
 	vertical-align: top;
-	line-height: 150%;
 	width: 70%;
-	//background-color: rgba(20, 69, 125, 0.25);
 	background-color: rgba(223, 140, 88, 0.4);
 	
 
@@ -109,14 +109,13 @@ hr {
     margin-top: 10vh;
     text-align: center;
 	font-weight: lighter;
-    font-size: 3vmin;
-    //background-color: rgba(255, 255, 255, 0.25);
+    font-size: 4vmin;
     background-color: rgba(121, 46, 0, 0.4);
     border-radius: 35px;
     width: 50%;
 	padding: 5%;
-	margin: 5% auto 5% auto;
-
+	margin: auto;
+	margin-top: 10%;
 }
 
 .square {
@@ -125,7 +124,6 @@ hr {
     padding-bottom: 40%;
     position: relative;
     width: 40%;
-	//background-color: rgba(255, 255, 255, 0.25);
 	background-color: rgba(121, 46, 0, 0.4);
 	border-radius: 35px;
     display: none;
@@ -135,10 +133,10 @@ hr {
 	position: absolute;
 	left: 0px;
 	right: 0px;
-	top: 5%;
+	top: 1%;
 	color: white;
 	font-weight: lighter;
-	font-size: 3vmin;
+	font-size: 4vmin;
     text-align: center;
 	margin: 0;
 }
