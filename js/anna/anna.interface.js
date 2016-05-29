@@ -96,7 +96,7 @@ function think () {
 	//console.log(image);
 	//console.log(localStorage.getItem(1338));
 	//un mot cleft déclenche la fin du proto
-	if (x == "panda" && image == 1)
+	if (x.toLowerCase().indexOf("tchernobyle") != -1 && image == 1)
 	{
 		//console.log("yeah")
 		document.location.href="credit.html";
