@@ -1,9 +1,14 @@
+html {
+    height: 100;
+    width: 100;
+}
+
 body {
     width: 1080px; 
     height: 1920px;
-    margin-top: 0px;
-    margin-bottom: 0px;
-    margin-left: 0px;
+    min-height: 100%;
+    margin: 0px;
+    padding: 0px;
     color: white;
     font-family: Calibri,'HelveticaNeue-Light', 'HelveticaNeue', Helvetica, Arial, sans-serif;
 }
@@ -100,7 +105,9 @@ h1 {
 
 #writer{
 	outline: none;
-
+    position: absolute;
+    bottom: 0;
+    width: 100%;
 }
 
 #writer input{

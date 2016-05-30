@@ -13,7 +13,7 @@ h1 {
     margin: 0px;
     padding-top: 5%;
     padding-bottom: 5%;
-    font-size:  20vmin;
+    font-size:  30vmin;
     text-align: center;
 }
 
@@ -49,7 +49,7 @@ h1 {
 }
 
 #intro {
-    margin-top: 40%;
+    margin-top: 60%;
     padding-top: 5%;
     padding-bottom: 5%;
     margin-left: auto;
@@ -65,6 +65,7 @@ h1 {
 #startButton {
     padding-top: 2%;
     padding-bottom:4%;
+    margin-top: 10%; 
     margin-right: auto;
     margin-left: auto;
     text-align: center;
