@@ -10,7 +10,7 @@ var myCanvasContext,cptFrame;
                 drawFrame();
             }
             function drawFrame() {
-                for (var i = 0;i < 5; i++){
+                /*for (var i = 0;i < 5; i++){
                     myCanvasContext.fillStyle="#25C61F";
                     myCanvasContext.fillRect(Math.floor((Math.random() * 900) - 100), Math.floor((Math.random() * 1920) + 1), Math.floor((Math.random() * 400) + 200), 50);
                     myCanvasContext.fill();
@@ -26,7 +26,26 @@ var myCanvasContext,cptFrame;
                     myCanvasContext.fillStyle="#214C20";
                     myCanvasContext.fillRect(Math.floor((Math.random() * 900) - 100), Math.floor((Math.random() * 1920) + 1), Math.floor((Math.random() * 400) + 200), 50);
                     myCanvasContext.fill();
+                }*/
+
+                for (var i = 0;i < 100; i++){
+                    myCanvasContext.fillStyle="#7B8281";
+                    myCanvasContext.fillRect(Math.floor((Math.random() * 1080) + 1), Math.floor((Math.random() * 1920) + 1), Math.floor((Math.random() * 1) + 10), 10);
+                    myCanvasContext.fill();
                 }
+
+                for (var i = 0;i < 100; i++){
+                    myCanvasContext.fillStyle="#4C5151";
+                    myCanvasContext.fillRect(Math.floor((Math.random() * 1080) + 1), Math.floor((Math.random() * 1920) + 1), Math.floor((Math.random() * 1) + 10), 10);
+                    myCanvasContext.fill();
+                }
+
+                for (var i = 0;i < 100; i++){
+                    myCanvasContext.fillStyle="#A9AFAE";
+                    myCanvasContext.fillRect(Math.floor((Math.random() * 1080) + 1), Math.floor((Math.random() * 1920) + 1), Math.floor((Math.random() * 1) + 10), 10);
+                    myCanvasContext.fill();
+                }
+                
                 if (cptFrame == 250) {
                     var c = document.getElementById("myCanvas");
                     var ctx = c.getContext("2d");
