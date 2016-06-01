@@ -77,14 +77,20 @@ h1 {
 {
     display: none;
     margin-top: 2%;
-    margin-bottom: 4%;
-    padding: 5%;
+    margin-bottom: 2%;
+    padding-left : 5%;
+    padding-right: 5%;
+    padding-top: 0%;
+    padding-bottom: 0%;
     vertical-align: top;
     line-height: 150%;
-    width: 50%;
-    padding-top: 70px;
-    padding-bottom: 70px;
+    width: 60%;
 
+}
+
+#BosqueRojo {
+    padding: 0%;
+    display:inline-block;
 }
 
 .bubble.blue
@@ -100,7 +106,7 @@ h1 {
     background-color: rgba(28, 73, 40, 0.4);
     color: white;
     text-align: right;
-    margin-left: 39%;
+    margin-left: 29%;
 }
 
 #writer{

@@ -2,10 +2,10 @@ var myCanvasContext;
             
 function pandaImage () {
 
-    var element = document.getElementById("chat");
+    /*var element = document.getElementById("chat");
     element.parentNode.removeChild(element);
     var element = document.getElementById("writer");
-    element.parentNode.removeChild(element);
+    element.parentNode.removeChild(element);*/
 
     var canvas=document.getElementById("myCanvas");
     myCanvasContext=canvas.getContext("2d");
@@ -14,9 +14,9 @@ function pandaImage () {
     document.getElementById("myCanvas").style.pointerEvents = "auto";
     //myCanvasContext.fillStyle="black";
     //myCanvasContext.fillRect(0,0,1080,1920);
-    var img = document.getElementById("phoneCall");
+    /*var img = document.getElementById("phoneCall");
     ctx.drawImage(img, 0, 600, 1100, 689);
-    c.addEventListener("click", click, false);
+    c.addEventListener("click", click, false);*/
     localStorage.setItem(1337, 1);
     //console.log(buggued);
 }

@@ -71,7 +71,7 @@ function sendMessage () {
 	//console.log(messages_sent);
     console.log(Background);
 	if (buggued == 1 && messages_sent == 2) {
-		pandaImage();
+		location.href='chat.html';
 		localStorage.setItem(1337, 0);
 		localStorage.setItem(1336, 1);
 	}
@@ -118,6 +118,7 @@ function think () {
 			else if (buggued ==1 && messages_sent == 1) 
 			{
 				dialogue(false, "Aide moi à décrypter cette image");
+				$('<img id="BosqueRojo" src="img/BosqueRojo.png">').appendTo("#box4");
 				messages_sent++;
 			}
 			else
@@ -141,7 +142,7 @@ function think () {
 
 function dialogue(fromHuman, dialoguetext) {
 	if (dialoguetext.trim() != "") {
-		if (currentBox < 3) {
+		if (currentBox < 5) {
 			if (fromHuman) {
 				$("#box" + currentBox).addClass("white");
 			}
@@ -154,17 +155,17 @@ function dialogue(fromHuman, dialoguetext) {
 		}
 		else {
 			
-			for (var i = 1; i < 3; i++) {
+			for (var i = 1; i < 5; i++) {
 				$("#box" + i).removeClass("white");
 				$("#box" + i).removeClass("blue");
-				if (((i < 2) && $("#box" + (i + 1)).hasClass("white")) || ((i == 2) && fromHuman)) {
+				if (((i < 4) && $("#box" + (i + 1)).hasClass("white")) || ((i == 4) && fromHuman)) {
 					$("#box" + i).addClass("white");
 				}
 				else {
 					$("#box" + i).addClass("blue");
 				}
-				if (i == 2) {
-					$("#box2").text(dialoguetext);
+				if (i == 4) {
+					$("#box4").text(dialoguetext);
 				}
 				else
 					$("#box" + i).text($("#box" + (i+1)).text());
