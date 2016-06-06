@@ -18,30 +18,33 @@
 		<script type="text/javascript" src="js/anna/anna.interface.js"></script>
         <title>Captives</title>
     </head>
-    <!--<body onload="start();">-->
     <body>
-            <canvas id="myCanvas" width="1080px" height="1920px" style="pointer-events: none;">
-                Your browser does not support the HTML5 canvas tag.
-            </canvas>
+        <canvas id="myCanvas" width="1080px" height="1920px" style="pointer-events: none;">
+            Your browser does not support the HTML5 canvas tag.
+        </canvas>
+
         <div id="wrapper">
-             <img id="phoneCall" width="0px" height="0px" src="img/BosqueRojo.png" alt="phone">
+
             <video id="video1" width="1820" height="1920" autoplay loop>
                 <source src="video/ombre.mp4">
             </video>
+
             <div id="chat">
-                <p id="box1" class="bubble" style="display: block;">AIDE-MOI, JE T'EN SUPPLIE !</p>
+                <p id="box1" class="bubble" style="display: block;">
+                    AIDE-MOI, JE T'EN SUPPLIE !
+                </p>
                 <p id="box2" class="bubble"></p>
                 <p id="box3" class="bubble"></p>
                 <p id="box4" class="bubble"></p>
             </div>
+
             <div id="writer">
                 <form onSubmit="return sendMessage();">
                     <input type="text" id="message" autocomplete="off" disabled placeholder="Please wait... loading...">
                 </form>
             </div>
+
         </div>
-
-
     </body>
 </html>
 

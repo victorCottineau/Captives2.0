@@ -22,30 +22,12 @@ h1 {
     height: 100%;
     margin-left: auto;
     margin-right: auto;
-    //background-image: linear-gradient(#10597e, #5baab1);
-	//background-color: #5baab1;
 }
 
 #video1 {
     position: fixed;
      left:-370px;
     z-index: -1;
-}
-
-#backgroundCanvas {
-    position: fixed;
-    left: 0;
-    top: 0;
-    z-index: -1;
-}
-
-#logoHolder {
-}
-
-#logo {
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
 }
 
 #intro {
@@ -74,9 +56,5 @@ h1 {
     background-color: rgba(121, 46, 0, 0.4);
     width: 50%;
     border-radius: 35px;
-}
-
-#buttonHolder {
-    
 }
 

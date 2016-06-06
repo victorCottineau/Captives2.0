@@ -81,10 +81,15 @@ function start() {
 	$("#question").css("display", "block");
 	$(".square").css("display", "block");
 };
+//---------------------------------------------------------------------------------------------------------------------------------------------------------//
+//Tout ce qui est commenté par la suite permet de choisir un assistant en fonction du résultat (cette fonction n'est pas utilisée dans la version actuelle)//
+//---------------------------------------------------------------------------------------------------------------------------------------------------------//
+
 
 function nextQuestion() {
 	if (questionNumber == 10)
 	{
+		/*
         if (dmitry >= maxxy)
         {
             if (dmitry >= louise)
@@ -113,6 +118,7 @@ function nextQuestion() {
         }
 		symbio = 50 + 5 * symbio;
 		localStorage.setItem(1339,symbio);
+		*/
 		document.location.href="chat.html";
 	}
 	else
@@ -124,13 +130,16 @@ function nextQuestion() {
 
 window.onload = function() {
 	questionNumber = 1;
+	/*
 	dmitry = 0;
 	maxxy = 0;
 	louise = 0;
+	*/
 	init();
 }
 
 function answer(answerNumber) {
+	/*
 	if (questionNumber == 1)
 	{
 		if (answerNumber == 1)
@@ -221,5 +230,6 @@ function answer(answerNumber) {
 		else if (answerNumber == 3)
 			maxxy++;
 	}
+	*/
 	nextQuestion();
 }

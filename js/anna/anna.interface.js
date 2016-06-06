@@ -23,8 +23,11 @@ function nnStart () {
 	$("#message").attr("placeholder", "C'est à vous !");
 	//Le curseur prend la barre d'input en focus pour taper directement
 	$("#message").focus();
+	//Booléen pour voir si la phase de bug est passée
 	buggued = localStorage.getItem(1337);
+	//Booléen pour voir si l'image est passée
 	image = localStorage.getItem(1336);
+	//Booléen pour voir l'état du background
     Background = localStorage.getItem(1335);
 	$("#box1").addClass("blue");
 	currentBox = 2;
@@ -32,10 +35,9 @@ function nnStart () {
 		$("#box1").text("AIDE-MOI, JE T'EN SUPPLIE !");
 	}
 	if (image == 1) {
-		$("#box1").text("Qu'est ce qu'il vient de se passer ?");
+		$("#box1").text("Qu'est ce que tu as vu ?");
 	}
 	nnTimer = setInterval(nnLifePulse, 1000)
-	//console.log(buggued);
 }
 function nnStop () { clearInterval(nnTimer); }
 
@@ -65,14 +67,12 @@ var tag = 0;
 
 function sendMessage () {
 	//On déclenche la fin de la phase ombre après un certain nombre de messages envoyés.
-	//console.log(messages_sent);
-	//console.log(image);
-	//console.log(buggued);
-	//console.log(messages_sent);
     console.log(Background);
 	if (buggued == 1 && messages_sent == 2) {
 		location.href='chat.html';
+		//Booléen pour voir si la phase de bug est passée
 		localStorage.setItem(1337, 0);
+		//Booléen pour voir si l'image est passée
 		localStorage.setItem(1336, 1);
 	}
 	else if (messages_sent == 4 && image == 0) {
@@ -93,21 +93,14 @@ function think () {
 	var x = $("#message").val();
 	$("#message").val("");
 	x = x.trim();
-	//console.log(image);
-	//console.log(localStorage.getItem(1338));
 	//un mot cleft déclenche la fin du proto
 	if (x.toLowerCase().indexOf("tchernobyle") != -1 && image == 1)
 	{
-		//console.log("yeah")
 		document.location.href="credit.html";
+		//Booléen pour voir si l'image est passée
 		localStorage.setItem(1336, 0);
 	}
-    //un mot clef déclenche le bug
-    /*else if (x == "banane")
-    {
-        chatStart();
-        //document.location.href="bug.html";
-    }*/
+  
 	else if (x != "") {
 		setTimeout(function(){
 			if (buggued == 1 && messages_sent == 0)
@@ -117,7 +110,7 @@ function think () {
 			}
 			else if (buggued ==1 && messages_sent == 1) 
 			{
-				dialogue(false, "Aide moi à décrypter cette image");
+				dialogue(false, "Il faut que tu décrypte cette image");
 				$('<img id="BosqueRojo" src="img/BosqueRojo.png">').appendTo("#box4");
 				messages_sent++;
 			}
@@ -173,7 +166,6 @@ function dialogue(fromHuman, dialoguetext) {
 		}
         if (!fromHuman && buggued == 0){
             emot();
-           // backgroundStart();
             console.log(emotion);
             
         }
@@ -187,7 +179,6 @@ function emot () {
 
     //neutral
     if (localStorage.getItem(1335) != 0 && emotion<=65 && emotion>=35) {
-        //$("#wrapper").css("background-image","linear-gradient(#10597e, #5baab1)");
 
 		$("head").append('<style type="text/css"></style>');
 		var newStyleElement = $("head").children(':last');
@@ -198,12 +189,12 @@ function emot () {
 
         var vid = document.getElementById("video1");
         vid.src = "video/neutral.mp4";
+        //Booléen pour voir l'état du background
         localStorage.setItem(1335, 0);
     }
+
     //joy
     if (localStorage.getItem(1335) != 1 && emotion>65){
-        //$("#wrapper").css("background-image","linear-gradient(#08EF00, #97ED94)");
-
 
 		$("head").append('<style type="text/css"></style>');
 		var newStyleElement = $("head").children(':last');
@@ -214,8 +205,10 @@ function emot () {
 
         var vid = document.getElementById("video1");
         vid.src = "video/joy.mp4";
+        //Booléen pour voir l'état du background
         localStorage.setItem(1335, 1);
     }
+
     //wrath
     if (localStorage.getItem(1335) != 2 && emotion<35) {
 
@@ -227,7 +220,8 @@ function emot () {
 		newStyleElement.html('.blue{background:url(img/bulles/bulle-colere-gauche.png) no-repeat center center; background-size:100% 100%;}');
 
         var vid = document.getElementById("video1");
-        vid.src = "video/wraith.mp4";
+        vid.src = "video/wrath.mp4";
+        //Booléen pour voir l'état du background
         localStorage.setItem(1335, 2);
     }
 }

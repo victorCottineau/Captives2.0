@@ -40,7 +40,8 @@ nSynthiaHello.operator = function () {
 	var cat = this.inputs[1].cval;
 	if (cat.find("[HELLO]") || (cat.find("[POSITIVE]") && cat.find("[TIME]"))) {
 		this.cval = this.randomTemplate();
-        emotion+= 5;
+		//emotion ++
+        emotion+= 25;
     }
 	else this.cval = "";
 	}
@@ -77,7 +78,8 @@ var nSynthiaYes = new nRule(synthia_yes);
 nSynthiaYes.operator = function () {
 	var cat = this.inputs[1].cval;
 	if (cat.find("[YES]")) {
-		this.cval = this.randomTemplate();  
+		this.cval = this.randomTemplate(); 
+		//emotion + 
         emotion+= 5;
     }
 	else this.cval = "";
@@ -100,6 +102,7 @@ nSynthiaNo.operator = function () {
 	var cat = this.inputs[1].cval;
 	if (cat.find("[NO]")) {
 		this.cval = this.randomTemplate();
+		//emotion -
         emotion-=5;
     }
 	else this.cval = "";
@@ -119,6 +122,7 @@ nSynthiaSorry.operator = function () {
 	var cat = this.inputs[1].cval;
 	if (cat.find("[SORRY]")) {
 		this.cval = this.randomTemplate();
+		//emotion +
         emotion+= 5;
     }
 	else this.cval = "";
@@ -160,7 +164,8 @@ nSynthiaInsultes.operator = function () {
 	var cat = this.inputs[1].cval;
 	if (cat.find("[INSULT]")) {
 		this.cval = this.randomTemplate();
-        emotion-=5;
+		//emotion --
+        emotion-=30;
     }
 	else this.cval = "";
 	}
