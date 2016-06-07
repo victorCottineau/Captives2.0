@@ -27,9 +27,8 @@ body {
 }
 
 #video1 {
-
     position: fixed;
-     left:-370px;
+    left:-370px;
     z-index: -1;
 }
 
