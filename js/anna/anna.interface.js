@@ -94,7 +94,7 @@ function think () {
 	$("#message").val("");
 	x = x.trim();
 	//un mot cleft déclenche la fin du proto
-	if (x.toLowerCase().indexOf("tchernobyle") != -1 && image == 1)
+	if (x.toLowerCase().indexOf("tchernobyl") != -1 && image == 1)
 	{
 		document.location.href="credit.html";
 		//Booléen pour voir si l'image est passée
